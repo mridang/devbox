@@ -1,0 +1,21 @@
+{
+  "name": "go",
+  "version": "0.0.1",
+  "packages": ["go@latest"],
+  "env": {
+    "GOMODCACHE": "$PWD/.go",
+    "GOTOOLCHAIN": "local",
+    "GOROOT": null
+  },
+  "shell": {
+    "init_hook": [
+      "go mod download"
+    ],
+    "scripts": {
+      "test":   "go test ./...",
+      "build":  "go build ./...",
+      "lint":   "golangci-lint run --fix",
+      "format": "go fmt ./..."
+    }
+  }
+}
